@@ -1,8 +1,7 @@
 var UploadFile = angular.module('UploadApp',[]);
    var socket;
 UploadFile.controller('uploadController',function($scope){
-	
-    socket = io.connect('http://127.0.0.1:5000/');
+    socket = io.connect('http://localhost:3000/');
   
     socket.on('connect',function(){
 	    console.log("connected")
@@ -10,7 +9,7 @@ UploadFile.controller('uploadController',function($scope){
 	
 	
 });
-UploadFile.directive("fileinput", [function() {
+UploadFile.directive("fileinput", [function($) {
     return {
       link: function(scope, element, attributes) {
           scope.sentPercent = 0 + '%';  
@@ -56,7 +55,9 @@ UploadFile.directive("fileinput", [function() {
                         //console.log(msg)
                         if(msg == 200){
                             if(scope.status){
-                                scope.$apply(function(){scope.sentPercent = (i/allLines.length).toFixed(2)*100 + '%'});
+                                scope.$apply(function(){
+                                scope.sentPercent = (i/allLines.length).toFixed(2)*100 + '%'
+                                         $("div.progress-bar").css("width", scope.sentPercent);
                                 run(i);
                                 }
                         else{

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.4/socket.io.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<script src="js/controller.js"></script>
 
     
@@ -19,7 +22,11 @@
                 <div class="upload-btn-wrapper">
         <input type="file" file-model="myFile" fileinput="file1" style="margin-left:62px"/><br>
         <br>
-        completed :: {{sentPercent}}
+        <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:{{sentPercent}}">
+        </div>
+        </div>
+         <h4>{{sentPercent}}</h4>
         <input type="button" ng-click="pause()" value="Pause" style="margin-left:62px">
         <input type="button" ng-click="resume()" value="Resume" style="margin-left:124px">
         </br>

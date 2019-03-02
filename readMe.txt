@@ -12,4 +12,4 @@ then choose file
 
 it saves the file in server side in given directory (in your current folder)
 
-file size should up 10MB
+file size should up 20MB

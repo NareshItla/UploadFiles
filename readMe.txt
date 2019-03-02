@@ -3,10 +3,10 @@ pip install -r requirements.txt
 
 
 After this::
-start the server which runs on 5000 port:
+start the server which runs on 3000 port:
     python server.py
     
-Then access url:http://127.0.0.1:5000/
+Then access url:http://localhost:3000/
 
 then choose file
 

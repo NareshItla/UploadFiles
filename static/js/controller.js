@@ -58,10 +58,9 @@ UploadFile.directive("fileinput", [function ($) {
                                     if (msg == 200) {
                                         if (scope.status) {
                                             scope.$apply(function () {
-                                                scope.sentPercent = (i / allLines.length).toFixed(2) * 100 + '%'
-                                                $("div.progress-bar").css("width", scope.sentPercent);
-                                                run(i);
-                                            })
+                                                scope.sentPercent = (i / allLines.length).toFixed(2) * 100 + '%';
+                                            });
+                                            run(i);
                                         }
                                         else {
                                             console.log("paused");
